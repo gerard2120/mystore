@@ -1,0 +1,28 @@
+.products--grid{
+  display: flex;
+  flex-direction: column;
+}
+
+
+// tablets
+@media screen and (min-width: 40em) and (max-width: 63.9em) {
+  .products--grid{
+    display: grid;
+    // espacio de 4 columnas con una fraccion
+    grid-template-columns: repeat(4, 1fr);
+    // con espacio de
+    grid-gap: 15px;
+  }
+
+}
+
+// web
+@media screen and (min-width: 64em) {
+  .products--grid{
+    display: grid;
+    // espacio de 4 columnas con una fraccion
+    grid-template-columns: repeat(5, 1fr);
+    // con espacio de
+    grid-gap: 15px;
+  }
+}

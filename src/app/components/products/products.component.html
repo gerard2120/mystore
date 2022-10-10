@@ -1,0 +1,10 @@
+<div class="products--grid">
+  <!-- Ciclo :
+
+Constructor: cuando se corre una instancia
+ngOnChanges : corre antes y durante en el render, siemrpe que detecte cambios en el Input, está para eso, para detectar los cambios.
+ngOnInit: corre antes pero tiene la condicione que solo correo una vez. Ahi se corren eventos asincronos.
+ngAfcterViewInit: corre cuando los hijos de ese componentes se han renderizado.
+NgOnDestroy: Corre cuando se elimina el componente. -->
+  <app-product [product]="product" *ngFor="let product of products"></app-product>
+</div>
