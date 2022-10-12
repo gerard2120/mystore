@@ -1,3 +1,9 @@
+<p>
+  La cantidad de productos que se tienen {{ myShoppingCart.length }}
+</p>
+<p>
+  El total a pagar es: $ {{ total }}
+</p>
 <div class="products--grid">
   <!-- Ciclo :
 
@@ -6,5 +12,6 @@ ngOnChanges : corre antes y durante en el render, siemrpe que detecte cambios en
 ngOnInit: corre antes pero tiene la condicione que solo correo una vez. Ahi se corren eventos asincronos.
 ngAfcterViewInit: corre cuando los hijos de ese componentes se han renderizado.
 NgOnDestroy: Corre cuando se elimina el componente. -->
-  <app-product [product]="product" *ngFor="let product of products"></app-product>
+                                                                    <!-- Evento que se recibe del  hijo al padre -->
+  <app-product [product]="product" *ngFor="let product of products" (addedProduct)="onAddToShoppingCart($event)"></app-product>
 </div>

@@ -11,6 +11,25 @@
       background: transparent;
     }
   }
+  .side-menu {
+    // abarca todo el contenido
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    // decimos donde inicia
+    justify-content: flex-start;
+    // hacemos una rotacion para que se oculte
+    transform: translateX(-100%);
+    transition: all ease-out .5s;
+    &.active{
+      transform: translateX(0);
+    }
+  }
 }
 .hide-mobile {
   display: none;
