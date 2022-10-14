@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 import  { Product } from '../../models/product.model';
+import { BehaviorSubject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
   private myShoppingCart: Product[] = [];
+  private myCart = new BehaviorSubject<Product[]>([]);
+
+  // signo de pesos equivale a un observable
+  myCart$ = this.myCart.asObservable();
+
   total = 0;
   constructor() {
 
@@ -14,6 +20,8 @@ export class StoreService {
   addToShoppingCart(product: Product){
     console.log('product', product);
     this.myShoppingCart.push(product);
+    // pasa a el store del servicio
+    this.myCart.next(this.myShoppingCart)
   }
 
   getShoppingCart(){

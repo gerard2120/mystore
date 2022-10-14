@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../../services/store.service'
 
 @Component({
   selector: 'app-nav',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private storeService: StoreService
+  ) { }
 
   activeMenu:boolean = false;
+  counter = 0;
 
   ngOnInit(): void {
+    // se suscribe a la store de productos en myCart
+    this.storeService.myCart$.subscribe(product =>{
+      this.counter = product.length
+    })
   }
 
   toggleMenu(){

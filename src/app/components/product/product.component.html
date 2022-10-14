@@ -1,4 +1,6 @@
 <app-img [img]="product.image"></app-img>
-<h1>{{ product.price }}</h1>
-<p>{{ product.name }}</p>
+<h1>{{ product.price | currency:'COP' }}</h1>
+<p>{{ product.title }}</p>
+<!-- Directiva para cambiar el color de un elemento en angular -->
+<p appHightlight > {{ product.description }} </p>
 <button (click)="onAddToCart()">Add Cart</button>

@@ -4,6 +4,22 @@
 <p>
   El total a pagar es: $ {{ total }}
 </p>
+<p>
+  <!-- Pipes para ver dar formato a la fecha o moneda etc -->
+  Today: {{ today | date:'short' }}
+</p>
+<p>
+  <!-- Pipes para ver dar formato a la fecha o moneda etc -->
+  Today: {{ today | timeAgo }}
+</p>
+<p>
+  <!-- Pipes para ver dar formato a la fecha o moneda etc -->
+  Otra Fecha: {{ today | date:'yyyy/dd/mm' }}
+</p>
+<p>
+  <!-- Pipes para ver dar formato a la fecha o moneda etc -->
+  {{ 'vjdD' | uppercase }}
+</p>
 <div class="products--grid">
   <!-- Ciclo :
 
